@@ -3,7 +3,7 @@
     <div v-for="(item,index) in todolist"  :key="index">
         <input type="checkbox" v-model="item.flag">
         <label>{{item.name}}</label>
-        <span @click="del(index)">x</span>
+        <button @click="del(index)">删除</button>
     </div>
   </div>
 </template>
@@ -18,6 +18,7 @@ export default {
     },
     data(){
         return{
+            
         }
     },
     methods:{
@@ -25,11 +26,6 @@ export default {
             this.$store.commit("delete",i)
         }
     }
-    // watch:{
-    //     todolist(newVal){
-    //         console.log(newVal);
-    //     }
-    // }
 }
 </script>
 
